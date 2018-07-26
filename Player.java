@@ -36,5 +36,36 @@ class Player{
 	public void setIntelligence(byte intelligence){
 		_intelligence = intelligence;
 	}
+
+	public byte getWisdom(){
+		return _wisdom;
+	}
+
+	public void setWisdom(byte wisdom){
+		_wisdom = wisdom;
+	}
 	
+	public byte getDexterity(){
+		return _dexterity;
+	}
+
+	public void setDexterity(byte dexterity){
+		_dexterity = dexterity;
+	}
+
+	public byte getConstitution(){
+		return _constitution;
+	}
+
+	public void setConstitution(byte constitution){
+		_constitution = constitution;
+	}
+
+	public byte getCharisma(){
+		return _charisma;
+	}
+
+	public void setCharisma(byte charisma){
+		_charisma = charisma;
+	}
 }
