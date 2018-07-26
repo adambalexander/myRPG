@@ -13,7 +13,7 @@ class PlayerTestDrive{
 		System.out.println("Player's name is: " + p1.getName());
 		System.out.println("Strength: " + p1.getStrength());
 		System.out.println("Intelligence: " + p1.getIntelligence());
-		System.out.println("Widsom: " + p1.getWidsom());
+		System.out.println("Widsom: " + p1.getWisdom());
 		System.out.println("Dexterity: " + p1.getDexterity());
 		System.out.println("Constitution: " + p1.getConstitution());
 		System.out.println("Charisma: " + p1.getCharisma());
