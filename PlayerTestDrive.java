@@ -17,5 +17,12 @@ class PlayerTestDrive{
 		System.out.println("Dexterity: " + p1.getDexterity());
 		System.out.println("Constitution: " + p1.getConstitution());
 		System.out.println("Charisma: " + p1.getCharisma());
+
+		System.out.println("Setting maximum hit points to 20");
+		p1.setMaxHitPoints(20);
+		System.out.println("Max Hit Points: " + p1.getMaxHitPoints());
+		System.out.println("Try to set hit points to higher than max");
+		p1.setHitPoints(50);
+		System.out.println("Hit Points: " + p1.getHitPoints());
 	}
 }

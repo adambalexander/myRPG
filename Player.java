@@ -8,6 +8,7 @@ class Player{
 	private byte _constitution;
 	private byte _charisma;
 	
+	private int _maxHitPoints;
 	private int _hitPoints;
 	private int _magicPoints;
 	private int _encumberance;
@@ -67,5 +68,53 @@ class Player{
 
 	public void setCharisma(byte charisma){
 		_charisma = charisma;
+	}
+
+	public int getMaxHitPoints(){
+		return _maxHitPoints;
+	}
+
+	public void setMaxHitPoints(int value){
+		if(value < 1){
+			_maxHitPoints = 1;
+		}
+		else{
+			_maxHitPoints = value;
+		}
+	}
+	
+	public int getHitPoints(){
+		return _hitPoints;
+	}
+
+	public void setHitPoints(int value){
+		if(value <= _maxHitPoints && value >= 0){
+			_hitPoints = value;
+		}
+		if(value > _maxHitPoints){
+			_hitPoints = _maxHitPoints;
+		}
+		if(value < 0){
+			_hitPoints = 0;
+		}
+		
+	}
+
+	public void recoverHitPoints(int value){
+		if(_hitPoints + value > _maxHitPoints){
+			_hitPoints = _maxHitPoints;
+		}
+		else{
+			_hitPoints = _hitPoints + value;
+		}
+	}
+	
+	public void takeDamage(int damage){
+		if(_hitPoints > damage){
+			_hitPoints = _hitPoints - damage;
+		}
+		else{
+			_hitPoints = 0;
+		}
 	}
 }
