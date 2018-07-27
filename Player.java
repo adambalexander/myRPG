@@ -8,6 +8,7 @@ class Player{
 	private byte _constitution;
 	private byte _charisma;
 	
+	private byte _baseArmorClass;
 	private int _maxHitPoints;
 	private int _hitPoints;
 	private int _magicPoints;
@@ -81,6 +82,30 @@ class Player{
 		else{
 			_maxHitPoints = value;
 		}
+	}
+	
+	public byte getBaseArmorClass(){
+		return _baseArmorClass;
+	}
+
+	public void setBaseArmorClass(byte value){
+		_baseArmorClass = value;
+	}
+
+	public byte getEffectiveArmorClass(){
+		byte effectiveAC = _baseArmorClass;
+		
+		if(_dexterity >= 18){
+			effectiveAC -= 3;
+		}
+		if(_dexterity <18 && _dexterity >= 15){
+			effectiveAC -= 2;
+		}
+		if(_dexterity <15 && _dexterity >=13){
+			effectiveAC -= 1;
+		}
+		
+		return effectiveAC;
 	}
 	
 	public int getHitPoints(){
