@@ -7,7 +7,7 @@ public static void main(String [] args){
 	String s = "";
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	try{
-	s = br.readLine();
+		s = br.readLine();
 	}
 	catch(Exception ioex){
 		System.out.println("Exception Caught");
