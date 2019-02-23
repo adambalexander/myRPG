@@ -125,6 +125,11 @@ class Player{
 		
 	}
 
+	public void move(String direction){
+		//check to see if that direction is available
+		if(Room.exits())
+	}
+
 	public void recoverHitPoints(int value){
 		if(_hitPoints + value > _maxHitPoints){
 			_hitPoints = _maxHitPoints;
