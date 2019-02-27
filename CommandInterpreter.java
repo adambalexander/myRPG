@@ -1,29 +1,31 @@
- class CommandInterpreter{
+import java.util.HashMap;
 
+class CommandInterpreter{
 
-		 //Getters and Setters
-	
 
 	public void parseCommand(String commandString){
+		HashMap<String, String> commandVerbs;
+		HashMap<String, String> commandDirections;
+
+		commandVerbs = new HashMap<String, String>();
+		commandVerbs.put("look", "look");
+		commandVerbs.put("go", "move");
+		commandVerbs.put("move", "move");
+		commandVerbs.put("attack", "attack");
+		commandVerbs.put("hit", "attack");
+		commandVerbs.put("drop", "drop");
+		commandVerbs.put("leave", "drop");
+		commandVerbs.put("get", "take");
+		commandVerbs.put("look", "look");
+
 		String [] commandParts = commandString.split(" ");
-		String [] commandVerbs = new String []{"go", "move", "attack", "drop", "take", "look"};
-		String verbResult = "";
-		//String object1;
-		//String object2;
 
-		//System.out.println("The parts of your command are:  ");
-		for(String verb: commandVerbs) {
-			if (verb.equals(commandParts[0]))
-				verbResult = verb;
-		}
+		//String verbResult = "";
 
-		if(!verbResult.equals(""))
-			System.out.println(commandParts[0] + " seems to be your command verb.");
+		if(commandVerbs.containsKey(commandParts[0]))
+			System.out.println("Your true command is " + commandVerbs.get(commandParts[0]));
 		else
 			System.out.println("No verb was found in your command.");
-
-
-
 
 	}
 }
